@@ -1,16 +1,31 @@
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-
-<jsp:include page="navi.jsp"></jsp:include>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page session="true"%>
 <html>
-<head>
-	<title>Part View</title>
-</head>
 <body>
-<h1>
-	Hello world!  
-</h1>
+	<h1>Title : ${title}</h1>
+	<h1>Message : ${message}</h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+	<c:url value="/logout" var="logoutUrl" />
+
+	<!-- csrt for log out-->
+	<form action="${logoutUrl}" method="post" id="logoutForm">
+	  <input type="hidden" 
+		name="${_csrf.parameterName}"
+		value="${_csrf.token}" />
+	</form>
+	
+	<script>
+		function formSubmit() {
+			document.getElementById("logoutForm").submit();
+		}
+	</script>
+
+	<c:if test="${pageContext.request.userPrincipal.name != null}">
+		<h2>
+			Welcome : ${pageContext.request.userPrincipal.name} | <a
+				href="javascript:formSubmit()"> Logout</a>
+		</h2>
+	</c:if>
+
 </body>
 </html>
