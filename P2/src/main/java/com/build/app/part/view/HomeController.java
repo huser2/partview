@@ -29,7 +29,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = { "/home" }, method = RequestMethod.POST)
+	@RequestMapping(value = { "/home" }, method = RequestMethod.GET)
 	public String homePage(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 
@@ -74,6 +74,17 @@ public class HomeController {
 
 	}
 
+	@RequestMapping(value = { "/welcome**" }, method = RequestMethod.GET)
+	public ModelAndView welcomePage() {
+
+		ModelAndView model = new ModelAndView();
+		model.addObject("title", "Spring Security Custom Login Form");
+		model.addObject("message", "This is welcome page!");
+		model.setViewName("hello");
+		return model;
+
+	}
+	
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public ModelAndView userPage() {
 
@@ -85,9 +96,21 @@ public class HomeController {
 		return model;
 
 	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public ModelAndView loginPage() {
+
+		ModelAndView model = new ModelAndView();
+		model.addObject("title", "Spring Security Custom Login Form");
+		model.addObject("message", "This is protected page!");
+		model.setViewName("login");
+
+		return model;
+
+	}
 
 	// Spring Security see this :
-	@RequestMapping(value = { "/", "/login" }, method = RequestMethod.GET)
+	@RequestMapping(value = {"/"}, method = RequestMethod.GET)
 	public ModelAndView login(
 			@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout,
@@ -112,23 +135,25 @@ public class HomeController {
 
 	}
 
-	@RequestMapping(value = { "/logout" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/login" }, method = RequestMethod.GET)
 	public ModelAndView logout(
 			@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout,
 			HttpServletRequest request, HttpServletResponse response) {
-
+		System.out.println(" logout called.....");
 		ModelAndView model = new ModelAndView();
 		if (error != null) {
 			model.addObject("error", "Invalid username and password!");
 		}
 
+		if(logout!=null){
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null)
 			for (int i = 0; i < cookies.length; i++) {
 				cookies[i].setMaxAge(0);
 			}
-		model.addObject("msg", "You've been logged out successfully.");
+			model.addObject("msg", "You've been logged out successfully.");
+		}
 
 		model.setViewName("login");
 

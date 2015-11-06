@@ -21,30 +21,5 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
                 .withUser("user").password("password").roles("ADMIN");
     }
 	 
-	private CsrfTokenRepository csrfTokenRepository() 
-    { 
-        HttpSessionCsrfTokenRepository repository = new HttpSessionCsrfTokenRepository(); 
-        repository.setSessionAttributeName("_csrf");
-        return repository; 
-    }
-
-	/* (non-Javadoc)
-	 * @see org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter#configure(org.springframework.security.config.annotation.web.builders.HttpSecurity)
-	 */
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		// TODO Auto-generated method stub
-		//super.configure(http);
-		http.csrf()
-        .csrfTokenRepository(csrfTokenRepository());
-	}
-
-	/* (non-Javadoc)
-	 * @see org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter#configure(org.springframework.security.config.annotation.web.builders.WebSecurity)
-	 */
-	@Override
-	public void configure(WebSecurity web) throws Exception {
-		// TODO Auto-generated method stub
-		super.configure(web);
-	}
+	
 }
