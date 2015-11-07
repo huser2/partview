@@ -44,23 +44,7 @@ public class HomeController {
 		return "home";
 	}
 
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/about", method = RequestMethod.GET)
-	public String about(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
-				DateFormat.LONG, locale);
-
-		String formattedDate = dateFormat.format(date);
-
-		model.addAttribute("serverTime", formattedDate);
-
-		return "about";
-	}
+	
 
 	@RequestMapping(value = "/view**", method = RequestMethod.GET)
 	public ModelAndView adminPage() {
@@ -74,29 +58,8 @@ public class HomeController {
 
 	}
 
-	@RequestMapping(value = { "/welcome**" }, method = RequestMethod.GET)
-	public ModelAndView welcomePage() {
-
-		ModelAndView model = new ModelAndView();
-		model.addObject("title", "Spring Security Custom Login Form");
-		model.addObject("message", "This is welcome page!");
-		model.setViewName("hello");
-		return model;
-
-	}
 	
-	@RequestMapping(value = "/user", method = RequestMethod.GET)
-	public ModelAndView userPage() {
-
-		ModelAndView model = new ModelAndView();
-		model.addObject("title", "Spring Security Custom Login Form");
-		model.addObject("message", "This is protected page!");
-		model.setViewName("user");
-
-		return model;
-
-	}
-	
+		
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public ModelAndView loginPage() {
 
@@ -161,18 +124,30 @@ public class HomeController {
 
 	}
 	
-	
-	@RequestMapping(value = "/testPage", method = RequestMethod.GET)
-	public ModelAndView testPage() {
-
+	@RequestMapping(value = { "/create_car" }, method = RequestMethod.GET)
+	public ModelAndView createCar(){
+		
 		ModelAndView model = new ModelAndView();
-		model.addObject("title", "Spring Security Custom Login Form");
-		model.addObject("message", "This is protected page!");
-		model.setViewName("user");
-
+		model.addObject("test", "helooooooooooooooooo");
+		model.setViewName("/car/info");
 		return model;
-
 	}
 	
+	@RequestMapping(value = { "/create_model" }, method = RequestMethod.GET)
+	public ModelAndView createModel(){
+		
+		ModelAndView model = new ModelAndView();
+		
+		return model;
+	}
+	
+	@RequestMapping(value = { "/create_part" }, method = RequestMethod.GET)
+	public ModelAndView createPart(){
+		
+		ModelAndView model = new ModelAndView();
+		
+		return model;
+	}
+		
 
 }
