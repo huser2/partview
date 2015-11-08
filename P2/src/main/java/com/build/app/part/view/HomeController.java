@@ -43,6 +43,21 @@ public class HomeController {
 
 		return "home";
 	}
+	
+	@RequestMapping(value = { "/overview" }, method = RequestMethod.GET)
+	public String overViewPage(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
+				DateFormat.LONG, locale);
+
+		String formattedDate = dateFormat.format(date);
+
+		model.addAttribute("serverTime", formattedDate);
+
+		return "overview";
+	}
 
 	
 
@@ -58,6 +73,17 @@ public class HomeController {
 
 	}
 
+	@RequestMapping(value = "/header", method = RequestMethod.GET)
+	public ModelAndView headerPage() {
+
+		ModelAndView model = new ModelAndView();
+		model.addObject("title", "Spring Security Custom Login Form");
+		model.addObject("message", "This is protected page!");
+		model.setViewName("header");
+
+		return model;
+
+	}
 	
 		
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)

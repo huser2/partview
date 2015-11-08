@@ -6909,7 +6909,7 @@ w2utils.keyboard = (function (obj) {
                 var panelTop = 0;
                 if (current.length > 0) {
                     $(pname).scrollTop(0);
-                    panelTop = $(current).position().top;
+                    panelTop = $(current).position().top;                    
                 }
                 if (p.content === '') {
                     p.content = data;
@@ -6972,6 +6972,7 @@ w2utils.keyboard = (function (obj) {
         },
 
         sizeTo: function (panel, size) {
+        	
             var obj = this;
             var pan = obj.get(panel);
             if (pan === null) return false;
@@ -7191,6 +7192,7 @@ w2utils.keyboard = (function (obj) {
                             '</div>'+
                             '<div id="layout_'+ obj.name + '_resizer_'+ p1 +'" class="w2ui-resizer"></div>';
                 $(obj.box).find(' > div').append(html);
+                
                 // tabs are rendered in refresh()
             }
             $(obj.box).find(' > div')

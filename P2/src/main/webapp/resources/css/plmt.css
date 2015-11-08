@@ -7,7 +7,7 @@
 }
 
 .overviewtbl td {
-	font-family: Segoe UI, Tahoma, Arial, Helvetica;
+	font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 11px;
 	padding: 5px 5px;
 	border-style: solid;
@@ -17,7 +17,7 @@
 }
 
 .overviewtbl th {
-	font-family: Segoe UI, Tahoma, Arial, Helvetica;
+	font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 11px;
 	font-weight: normal;
 	padding: 5px 5px;
@@ -36,7 +36,7 @@
   z-index: 1;
   color: inherit;
   background-color: #f5f6f7;
-  font-family: Segoe UI, Tahoma, Arial, Helvetica;
+  font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -49,8 +49,46 @@
   z-index: 1;
   color: inherit;
   background-color: #ffffff;
-  font-family: Segoe UI, Tahoma, Arial, Helvetica;
+  font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 11px;
+  color:#222D32;
+}
+
+.w2ui-sidebar .w2ui-sidebar-div .w2ui-selected,
+.w2ui-sidebar .w2ui-sidebar-div .w2ui-selected:hover {
+  background-image: -webkit-linear-gradient(#A0A5AA, #ffffff);
+  background-image: -moz-linear-gradient(#A0A5AA, #ffffff);
+  background-image: -ms-linear-gradient(#A0A5AA, #ffffff);
+  background-image: -o-linear-gradient(#A0A5AA, #ffffff);
+  background-image: linear-gradient(#A0A5AA, #ffffff);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff69b1e0', endColorstr='#ff4a96d3', GradientType=0);
+  border-top: 0px solid #ffffff;
+  border-bottom: 0px solid #ffffff;
+  border-radius:0px;
+}
+
+.w2ui-sidebar .w2ui-sidebar-div .w2ui-node {
+  background-color: #ffffff;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  margin: 0px;
+  padding: 1px 0px;
+  color:#222D32;
+}
+
+.w2ui-layout > div .w2ui-panel .w2ui-panel-title {
+  padding: 5px;
+  background-image: -webkit-linear-gradient(#3C8DBC, #222D32);
+  background-image: -moz-linear-gradient(#3C8DBC, #222D32);
+  background-image: -ms-linear-gradient(#3C8DBC, #222D32);
+  background-image: -o-linear-gradient(#3C8DBC, #222D32);
+  background-image: linear-gradient(#3C8DBC, #222D32);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffdae6f3', endColorstr='#ffE0E6EF', GradientType=0);
+  border: 0px solid #b9cee9;
+  border-bottom: 0px solid #99bbe8;
+  border-radius: 0px;
+  color:#ffffff
+  
 }
 
 .w2ui-form .w2ui-form-header {
@@ -60,7 +98,7 @@
   border-bottom: 1px solid #99bbe8 !important;
   overflow: hidden;
   color: #444444;
-  font-family: Segoe UI, Tahoma, Arial, Helvetica;
+  font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 12px;
   text-align: left;
   padding: 8px;

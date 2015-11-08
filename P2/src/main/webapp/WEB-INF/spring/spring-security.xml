@@ -8,9 +8,10 @@
 
 	<http auto-config="true">
 	
-		<intercept-url pattern="/admin/*" access="ROLE_ADMIN" />
-		<intercept-url pattern="/user/*" access="ROLE_USER"/>		
-		<form-login login-processing-url="/j_spring_security_check" login-page="/" default-target-url="/home"
+		 <intercept-url pattern="/login" access="permitAll"/>
+        <intercept-url pattern="/home" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/**" access="permitAll" />
+        <form-login login-processing-url="/j_spring_security_check" login-page="/" default-target-url="/home"
             authentication-failure-url="/login?error" username-parameter="username"
             password-parameter="password" />
 		<logout  logout-success-url="/login?logout" logout-url="/logout"  invalidate-session="true" delete-cookies="JSESSIONID"/>		
@@ -23,7 +24,7 @@
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>
-				<user name="admin" password="frog" authorities="ROLE_ADMIN" />
+				<user name="admin" password="admin" authorities="ROLE_ADMIN,ROLE_USER" />
 				<user name="user" password="user" authorities="ROLE_USER" />
 			</user-service>
 		</authentication-provider>

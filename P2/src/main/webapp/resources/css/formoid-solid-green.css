@@ -246,6 +246,7 @@ Not advised to edit stuff below this line
   margin: 0;
   padding-top: 1em;
   padding-bottom: 1em;
+  
 }
 .formoid-solid-green div.submit{
   vertical-align: middle;
@@ -507,7 +508,7 @@ Not advised to edit stuff below this line
 .formoid-solid-green .element-file .file_text,
 .formoid-solid-green select{
   border-style: solid;
-  border-width: 2px;
+  border-width: 0.1px;
   border-color: #bdc3c7;
   -webkit-transition: border-color 0.5s ease-in-out;
   transition: border-color 0.5s ease-in-out;

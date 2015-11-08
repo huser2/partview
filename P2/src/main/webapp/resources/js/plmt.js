@@ -41,15 +41,17 @@ function processRequest(request) {
 
 function createLayout(layoutDiv) {
 	var pstyle = 'border-style:initial; solid #dfdfdf; padding: 0px;';
-
+	var nstyle = 'border-style:initial; solid #dfdfdf; padding: 0px; color:red; top:50px;';
+			
 	layoutDiv.w2layout({
 		name : 'plmt_layout',
-		panels : [  {
+		panels : [ {
 			type : 'left',
 			size : 200,
+			top:0,
 			resizable : true,
-			content : '',
-			title : 'Navigator'
+			content : '',			
+			title:'Navigator',			
 		}, {
 			type : 'main',
 			resizable : true,
@@ -72,6 +74,7 @@ function loadOverView() {
 	});
 
 }
+
 
 function createMenu(menuDiv) {
 	w2ui['plmt_layout'].content('left', $().w2sidebar({

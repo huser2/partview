@@ -37,7 +37,79 @@
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border: 0px solid #000;
+	position: relative;
 }
+
+.formoid-solid-green div.title{
+  background-color: #bcc3ca;
+  height: 8px;
+  position: relative;
+  }
+  
+  
+  .formoid-solid-green div.title h3{
+  position: relative;
+  top: -20px;
+  left: 20px;
+  
+  width: 500px;
+}
+
+.formoid-solid-green div.submit{
+  vertical-align: middle;
+  text-align: right;
+  border-top: 0px solid #d6dbdf;
+  background-color: #Ffffff;
+}
+
+.myButton {
+	-moz-box-shadow: 0px 0px 0px -14px #91b8b3;
+	-webkit-box-shadow: 0px 0px 0px -14px #91b8b3;
+	box-shadow: 0px 0px 0px -14px #91b8b3;
+	background-color:#768d87;
+	-moz-border-radius:11px;
+	-webkit-border-radius:11px;
+	border-radius:11px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	padding:9px 18px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#6c7c7c;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.formoid-solid-green input[type=submit]{
+  -moz-box-shadow: 0px 0px 0px -14px #91b8b3;
+	-webkit-box-shadow: 0px 0px 0px -14px #91b8b3;
+	box-shadow: 0px 0px 0px -14px #91b8b3;
+	background-color:#768d87;
+	-moz-border-radius:11px;
+	-webkit-border-radius:11px;
+	border-radius:11px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	padding:9px 18px;
+	text-decoration:none;
+}
+
+.formoid-solid-green input[type=submit]:hover{
+  background-color: #62D0BA;
+}
+.formoid-solid-green input[type=submit]:active{
+  background-color: #bcc3ca;
+}
+
 </style>
 </head>
 <body onload='document.loginForm.username.focus();'>
@@ -49,7 +121,7 @@
 
 
 		<div class="title">
-			<h2>Login</h2>
+			<h3>Login</h3>
 		</div>
 		<c:if test="${not empty error}">
 			<div class="error">${error}</div>
