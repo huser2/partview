@@ -22,6 +22,11 @@ position:relative;
 
 border: 0px rgb(89,89,89) solid;
 
+/* rounded corners */
+-webkit-border-radius:12px;
+-moz-border-radius: 7px; 
+border-radius: 7px;
+
 padding: 0px;
 
 -webkit-box-sizing: inherit;

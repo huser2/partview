@@ -44,6 +44,21 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value = { "/denied" }, method = RequestMethod.GET)
+	public String deniedPage(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
+				DateFormat.LONG, locale);
+
+		String formattedDate = dateFormat.format(date);
+
+		model.addAttribute("serverTime", formattedDate);
+
+		return "ddenied";
+	}
+	
 	@RequestMapping(value = { "/overview" }, method = RequestMethod.GET)
 	public String overViewPage(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);

@@ -50,12 +50,14 @@ function createLayout(layoutDiv) {
 			size : 200,
 			top:0,
 			resizable : true,
-			content : '',			
-			title:'Navigator',			
+			content : '',
+			title:'Main Navigation'
+						
 		}, {
 			type : 'main',
 			resizable : true,
 			style : pstyle,
+			title:'',
 			content : loadOverView()
 		} ]
 	});
@@ -79,31 +81,49 @@ function loadOverView() {
 function createMenu(menuDiv) {
 	w2ui['plmt_layout'].content('left', $().w2sidebar({
 		name : 'plmt_sidebar',
-		img : null,
-		nodes : [ {
-			id : 'home_nav',
-			text : 'Home',
-			img : 'icon-folder-open',
-			expanded : false,
-			group : false,
-			nodes : [ {
-				id : 'create_nav',
-				text : 'Create',
-				img: 'icon-folder',
-					nodes: [
-							   { id: 'create_car', text: 'Create Car', img: 'icon-page' },
-							   { id: 'create_model', text: 'Create Model', img: 'icon-page' },
-							   { id: 'create_part', text: 'Create Part', img: 'icon-page' }]
-			}, {
-				id : 'admin_nav',
-				text : 'System Administration',
-				img : 'icon-folder',
-				nodes: [
-						   { id: 'level-2-1-1-1', text: 'Create Report', img: 'icon-page' },
-						   { id: 'level-2-1-2-1', text: 'Create User', img: 'icon-page' },
-						   { id: 'level-2-1-3-1', text: 'Car Reports', img: 'icon-page' }]
-			} ]
-		} ],
+		img : 'icon-folder-open',
+		nodes : [ 
+				{ id: 'level-4', text: 'Programs',  expanded: false, group: false,
+					  nodes: [ { id: 'level-4-1', text: 'Accounts Payable' },
+							   { id: 'level-4-2', text: 'Accounts Receivable' },
+							   { id: 'level-4-3', text: 'General Ledger' },
+							   { id: 'level-4-4', text: 'Purchase Orders' },
+							   { id: 'level-4-5', text: 'Sales Orders' },
+							   { id: 'level-4-6', text: 'System Manager' }
+							 ]
+				},
+		       { id: 'level-1', text: 'System',  expanded: false, group: false,
+				  nodes: [ { id: 'level-1-1', text: 'Level 1.1', icon: 'fa-home' },
+						   { id: 'level-1-2', text: 'Level 1.2', icon: 'fa-star' },
+						   { id: 'level-1-3', text: 'Level 1.3', icon: 'fa-check' }
+						 ]
+				},
+				{ id: 'level-2', text: 'Transactions',  expanded: false, group: false,
+				  nodes: [ { id: 'level-2-1', text: 'Level 2.1',  
+							 nodes: [
+							   { id: 'level-2-1-1', text: 'Level 2.1.1' },
+							   { id: 'level-2-1-2', text: 'Level 2.1.2' },
+							   { id: 'level-2-1-3', text: 'Level 2.1.3' }
+						 ]},
+						   { id: 'level-2-2', text: 'Level 2.2' },
+						   { id: 'level-2-3', text: 'Level 2.3' }
+						 ]
+				},
+				{ id: 'level-3', text: 'Files',  expanded: false, group: false,
+				  nodes: [ { id: 'level-3-1', text: 'Level 3.1' },
+						   { id: 'level-3-2', text: 'Level 3.2' },
+						   { id: 'level-3-3', text: 'Level 3.3' }
+						 ]
+				},
+				
+				{ id: 'level-5', text: 'Reports',  expanded: false, group: false,
+					  nodes: [ { id: 'level-5-1', text: 'Level 3.1' },
+							   { id: 'level-5-2', text: 'Level 3.2' },
+							   { id: 'level-5-3', text: 'Level 3.3' }
+							 ]
+				}
+		
+		 ],
 		onClick : function(event) {
 			var target = event.target;
 			if(target =="home_nav"){

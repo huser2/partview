@@ -8,7 +8,7 @@
 
 .overviewtbl td {
 	font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 11px;
+	font-size: 12px;
 	padding: 5px 5px;
 	border-style: solid;
 	border-width: 0px;
@@ -18,7 +18,7 @@
 
 .overviewtbl th {
 	font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size: 11px;
+	font-size: 12px;
 	font-weight: normal;
 	padding: 5px 5px;
 	border-style: solid;
@@ -37,7 +37,7 @@
   color: inherit;
   background-color: #f5f6f7;
   font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .w2ui-layout > div .w2ui-panel .w2ui-panel-content {
@@ -50,7 +50,7 @@
   color: inherit;
   background-color: #ffffff;
   font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   color:#222D32;
 }
 
@@ -62,9 +62,22 @@
   background-image: -o-linear-gradient(#A0A5AA, #ffffff);
   background-image: linear-gradient(#A0A5AA, #ffffff);
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff69b1e0', endColorstr='#ff4a96d3', GradientType=0);
-  border-top: 0px solid #ffffff;
-  border-bottom: 0px solid #ffffff;
-  border-radius:0px;
+  border-top: 0px solid #004080;
+  border-bottom: 0px solid #004080;
+  border-radius:1px;
+  color:#000000;
+}
+
+.w2ui-sidebar .w2ui-sidebar-div .w2ui-selected .w2ui-node-caption,
+.w2ui-sidebar .w2ui-sidebar-div .w2ui-selected:hover .w2ui-node-caption,
+.w2ui-sidebar .w2ui-sidebar-div .w2ui-selected .w2ui-node-image,
+.w2ui-sidebar .w2ui-sidebar-div .w2ui-selected:hover .w2ui-node-image,
+.w2ui-sidebar .w2ui-sidebar-div .w2ui-selected .w2ui-node-image > span,
+.w2ui-sidebar .w2ui-sidebar-div .w2ui-selected:hover .w2ui-node-image > span,
+.w2ui-sidebar .w2ui-sidebar-div .w2ui-selected td.w2ui-node-dots,
+.w2ui-sidebar .w2ui-sidebar-div .w2ui-selected:hover td.w2ui-node-dots {
+  color: #000000!important;
+  text-shadow: 1px 1px 2px #666666 !important;
 }
 
 .w2ui-sidebar .w2ui-sidebar-div .w2ui-node {
